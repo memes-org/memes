@@ -37,8 +37,8 @@
     </style>
 </head>
 <body>
-    <h1>Click the button to play audio and view the image</h1>
-    <button onclick="playAudio()">Play MP3</button>
+    <h1>Click the button to see the prank!</h1>
+    <button onclick="showFullscreenImage()">Show Image</button>
 
     <div id="fullscreenImage" onclick="showPrankMessage()">
         <img src="https://www.bleepstatic.com/swr-guides/a/anonpop/anonpop-lock-screen.jpg" alt="Fullscreen Image">
@@ -46,18 +46,7 @@
 
     <div id="prankMessage">Ha ha pranked you, Porter</div>
 
-    <audio id="audioPlayer" style="display:none;">
-        <source src="https://drive.google.com/uc?id=13EwLtSnu7yWuE0618nJbQFe-oOthhrBd" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
     <script>
-        function playAudio() {
-            var audio = document.getElementById('audioPlayer');
-            audio.play();
-            showFullscreenImage();
-        }
-
         function showFullscreenImage() {
             document.getElementById('fullscreenImage').style.display = 'flex';
         }
