@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Gallery</title>
+    <title>Prank Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #fullscreenImage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        #fullscreenImage img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #prankMessage {
+            display: none;
+            font-size: 5vw; /* Responsive font size */
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <a href="https://drive.google.com/file/d/13EwLtSnu7yWuE0618nJbQFe-oOthhrBd/preview" target="_blank">View Gallery</a>
+    <h1>Click the button to view the image in fullscreen</h1>
+    <button onclick="showFullscreenImage()">Show Image</button>
+
+    <div id="fullscreenImage" onclick="showPrankMessage()">
+        <img src="https://www.bleepstatic.com/swr-guides/a/anonpop/anonpop-lock-screen.jpg" alt="Fullscreen Image">
+    </div>
+
+    <div id="prankMessage">Ha ha pranked you, Porter</div>
+
+    <script>
+        function showFullscreenImage() {
+            document.getElementById('fullscreenImage').style.display = 'flex';
+        }
+
+        function showPrankMessage() {
+            // Hide the image
+            document.getElementById('fullscreenImage').style.display = 'none';
+            
+            // Show the prank message
+            document.getElementById('prankMessage').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
+
