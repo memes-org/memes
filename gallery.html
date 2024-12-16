@@ -37,10 +37,10 @@
     </style>
 </head>
 <body>
-    <h1>Click the button to see the prank!</h1>
+    <h1>View Gallery</h1>
     <button onclick="showFullscreenImage()">Show Image</button>
 
-    <div id="fullscreenImage" onclick="showPrankMessage()">
+    <div id="fullscreenImage">
         <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2214212621001526-gr2.jpg" alt="Fullscreen Image">
     </div>
 
@@ -48,15 +48,16 @@
 
     <script>
         function showFullscreenImage() {
-            document.getElementById('fullscreenImage').style.display = 'flex';
-        }
-
-        function showPrankMessage() {
-            // Hide the image
-            document.getElementById('fullscreenImage').style.display = 'none';
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            const prankMessage = document.getElementById('prankMessage');
             
-            // Show the prank message
-            document.getElementById('prankMessage').style.display = 'block';
+            fullscreenImage.style.display = 'flex';
+            
+            // Set a timeout to hide the image and show the prank message after 5 seconds
+            setTimeout(() => {
+                fullscreenImage.style.display = 'none';
+                prankMessage.style.display = 'block';
+            }, 5000); // 5000 milliseconds = 5 seconds
         }
     </script>
 </body>
